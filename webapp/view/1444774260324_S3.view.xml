@@ -1,0 +1,81 @@
+<mvc:View xmlns:mvc="sap.ui.core.mvc" controllerName="generated.app.controller.1444774260324_S3" xmlns:m="sap.m"
+	xmlns:form="sap.ui.layout.form" xmlns:core="sap.ui.core">
+	<m:Page id="sap_Responsive_Page_0" showHeader="true" title="Shipping and Payment" showFooter="true" showNavButton="true"
+		navButtonPress="_onPageNavButtonPress">
+		<m:content>
+			<form:SimpleForm id="np-sap_ui_layout_form_SimpleForm-1444774400998-00U" minWidth="-1" maxContainerCols="2" layout="ResponsiveLayout"
+				editable="false" visible="true">
+				<form:title>
+					<core:Title id="np-sap_ui_core_Title-1444774400999-00V" text="Order Details" level="Auto"/>
+				</form:title>
+				<form:content>
+					<m:Label id="np-sap_m_Label-1444774400999-00W" text="Purchase Order" design="Standard" width="auto" required="false" textAlign="Begin"
+						textDirection="Inherit"/>
+					<m:Input id="np-sap_m_Input-1444774456708-01C" value="{OrderDetailsSet/PO}" type="Text" showValueHelp="false" enabled="true" visible="true"
+						width="200px" valueHelpOnly="false" maxLength="0"/>
+					<m:Label id="np-sap_m_Label-1444774400999-00Y" text="Ship-To-Party" design="Standard" width="auto" required="false" textAlign="Begin"
+						textDirection="Inherit"/>
+					<m:ComboBox id="np-sap_m_ComboBox-1444774470402-01F" value="{ShipTo}" editable="true" enabled="true" visible="true" width="192px"
+						valueState="None" maxWidth="100%">
+						<m:items>
+							<core:Item id="np-sap_ui_core_Item-1444774470402-01G" text="{OrderDetailsSet/ShipToParty}" enabled="true"/>
+						</m:items>
+					</m:ComboBox>
+					<m:Label id="np-sap_m_Label-1444774401000-010" text="Address" design="Standard" width="auto" required="false" textAlign="Begin"
+						textDirection="Inherit"/>
+					<m:Text id="np-sap_m_Text-1444774401000-011" text="{OrderDetailsSet/Address}" width="300px" maxLines="1" wrapping="true" textAlign="Begin"
+						textDirection="Inherit"/>
+					<m:Label id="np-sap_m_Label-1444774536855-01T" text="City" design="Standard" width="auto" required="false" textAlign="Begin"
+						textDirection="Inherit"/>
+					<m:Text id="np-sap_m_Text-1444774541724-01V" text="{OrderDetailsSet/City}" width="300px" maxLines="1" wrapping="true" textAlign="Begin"
+						textDirection="Inherit"/>
+					<m:Label id="np-sap_m_Label-1444774569567-01X" text="State" design="Standard" width="auto" required="false" textAlign="Begin"
+						textDirection="Inherit"/>
+					<m:Text id="np-sap_m_Text-1444774574372-01Z" text="{OrderDetailsSet/State}" width="300px" maxLines="1" wrapping="true" textAlign="Begin"
+						textDirection="Inherit"/>
+					<m:Label id="np-sap_m_Label-1444774582382-021" text="Zip" design="Standard" width="auto" required="false" textAlign="Begin"
+						textDirection="Inherit"/>
+					<m:Text id="np-sap_m_Text-1444774585140-023" text="{OrderDetailsSet/Zip}" width="300px" maxLines="1" wrapping="true" textAlign="Begin"
+						textDirection="Inherit"/>
+					<m:Label id="np-sap_m_Label-1444774589065-025" text="Country" design="Standard" width="auto" required="false" textAlign="Begin"
+						textDirection="Inherit"/>
+					<m:Text id="np-sap_m_Text-1444774591922-027" text="{OrderDetailsSet/Country}" width="300px" maxLines="1" wrapping="true" textAlign="Begin"
+						textDirection="Inherit"/>
+					<m:Label id="np-sap_m_Label-1444774596231-029" text="Phone Number" design="Standard" width="auto" required="false" textAlign="Begin"
+						textDirection="Inherit"/>
+					<m:Text id="np-sap_m_Text-1444774598987-02B" text="{OrderDetailsSet/PhoneNumber}" width="300px" maxLines="1" wrapping="true"
+						textAlign="Begin" textDirection="Inherit"/>
+					<m:Label id="np-sap_m_Label-1444774602846-02D" text="Carrier" design="Standard" width="auto" required="false" textAlign="Begin"
+						textDirection="Inherit"/>
+					<m:Text id="np-sap_m_Text-1444774605602-02F" text="{OrderDetailsSet/Carrier}" width="300px" maxLines="1" wrapping="true" textAlign="Begin"
+						textDirection="Inherit"/>
+					<m:Label id="np-sap_m_Label-1444774610098-02H" text="Incoterms" design="Standard" width="auto" required="false" textAlign="Begin"
+						textDirection="Inherit"/>
+					<m:Text id="np-sap_m_Text-1444774612736-02J" text="{OrderDetailsSet/Incoterms}" width="300px" maxLines="1" wrapping="true" textAlign="Begin"
+						textDirection="Inherit"/>
+					<m:Label id="np-sap_m_Label-1444774618777-02L" text="Shipping Instructions" design="Standard" width="auto" required="false"
+						textAlign="Begin" textDirection="Inherit"/>
+					<m:TextArea id="np-sap_m_TextArea-1444774623097-02N" value="{OrderDetailsSet/ShippingInstructions}" rows="2" cols="20" maxLength="0"
+						wrapping="None" visible="true"/>
+					<m:Label id="np-sap_m_Label-1444774628945-02P" text="Notes to Receiver" design="Standard" width="auto" required="false" textAlign="Begin"
+						textDirection="Inherit"/>
+					<m:TextArea id="np-sap_m_TextArea-1444774632098-02R" value="{OrderDetailsSet/NotesToReceiver}" rows="2" cols="20" maxLength="0"
+						wrapping="None" visible="true"/>
+				</form:content>
+			</form:SimpleForm>
+		</m:content>
+		<m:footer>
+			<m:Bar id="sap_Responsive_Page_0-footer-sap_m_Bar-1461228629223" design="Auto">
+				<m:contentLeft/>
+				<m:contentMiddle/>
+				<m:contentRight>
+					<m:Button id="sap_Responsive_Page_0-footer-sap_m_Bar-1461228629223-contentRight-sap_m_Button-1" iconDensityAware="false" text="Review Order"
+						type="Default" iconFirst="true" width="auto" enabled="true" visible="true" press="_onButtonPress7"/>
+				</m:contentRight>
+			</m:Bar>
+		</m:footer>
+		<m:headerContent/>
+		<m:subHeader/>
+		<m:customHeader/>
+	</m:Page>
+</mvc:View>

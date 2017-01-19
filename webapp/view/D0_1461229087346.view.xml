@@ -1,0 +1,17 @@
+<mvc:View xmlns:mvc="sap.ui.core.mvc" controllerName="generated.app.controller.D0_1461229087346" xmlns:m="sap.m">
+	<m:Dialog id="sap_m_Dialog_0" title="Successfull" horizontalScrolling="true" showHeader="true" state="Success" stretch="false"
+		type="Standard" verticalScrolling="true">
+		<m:content>
+			<m:Text id="sap_m_Dialog_0-content-sap_m_Text-1461229131360" text="The order has been submitted. The order number is 123654." width="auto"
+				maxLines="2" wrapping="true" textAlign="Begin" textDirection="Inherit"/>
+		</m:content>
+		<m:beginButton/>
+		<m:buttons/>
+		<m:customHeader/>
+		<m:endButton>
+			<m:Button id="sap_m_Dialog_0-endButton-sap_m_Button-1461229181458" iconDensityAware="false" text="OK" type="Default" iconFirst="true"
+				width="auto" enabled="true" visible="true" press="_onButtonPress2"/>
+		</m:endButton>
+		<m:subHeader/>
+	</m:Dialog>
+</mvc:View>

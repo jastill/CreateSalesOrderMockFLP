@@ -1,0 +1,39 @@
+<mvc:View xmlns:mvc="sap.ui.core.mvc" controllerName="generated.app.controller.S0" xmlns:m="sap.m">
+	<m:Page id="sap_Responsive_Page_0" showHeader="true" title="A.I.T. GmbH Sales Orders" showFooter="true">
+		<m:content>
+			<m:List id="np-sap_m_List-1444772481157-061" mode="SingleSelectMaster" width="100%" headerText="Header" footerText=""
+				backgroundDesign="Solid" showSeparators="All" growing="false" growingThreshold="20" growingScrollToLoad="false" items="{/SalesOrdersSet}"
+				itemPress="_onListItemPress">
+				<m:items>
+					<m:ObjectListItem id="np-sap_m_ObjectListItem-1444772481158-062" showMarkers="false" intro="" title="{SOForm}" icon="" number="{Amount}"
+						numberUnit="{Currency}" numberState="None" type="Active" selected="true">
+						<m:attributes>
+							<m:ObjectAttribute id="np-sap_m_ObjectAttribute-1444772481158-063" title="Ship To" text="{ShipTo}"/>
+						</m:attributes>
+						<m:firstStatus/>
+						<m:secondStatus/>
+					</m:ObjectListItem>
+				</m:items>
+				<m:headerToolbar>
+					<m:Toolbar id="np-sap_m_Toolbar_2-1444772481160-06M" visible="true" enabled="true" width="" design="Solid">
+						<m:content>
+							<m:SearchField id="np-sap_m_SearchField-1444772481160-06N" showSearchButton="true" visible="true"/>
+						</m:content>
+					</m:Toolbar>
+				</m:headerToolbar>
+			</m:List>
+		</m:content>
+		<m:footer>
+			<m:Bar id="sap_Responsive_Page_0-footer-sap_m_Bar-1461228410278" design="Auto">
+				<m:contentLeft/>
+				<m:contentMiddle/>
+				<m:contentRight/>
+			</m:Bar>
+		</m:footer>
+		<m:headerContent>
+			<m:Button id="np-sap_m_Button-1442867530181-051" iconDensityAware="false" text="" type="Default" icon="sap-icon://customer"
+				iconFirst="false" width="auto" enabled="true" visible="true" press="_onButtonPress8"/>
+		</m:headerContent>
+		<m:subHeader/>
+	</m:Page>
+</mvc:View>

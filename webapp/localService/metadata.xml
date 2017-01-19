@@ -1,0 +1,160 @@
+<edmx:Edmx Version="1.0" xmlns:edmx="http://schemas.microsoft.com/ado/2007/06/edmx"
+	xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata" xmlns:sap="http://www.sap.com/Protocols/SAPData">
+	<edmx:DataServices m:DataServiceVersion="2.0">
+		<Schema Namespace="d43d48abf986b1b00cde2c91" xml:lang="en" sap:schema-version="0000" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+			<EntityContainer Name="d43d48abf986b1b00cde2c91_Entities" m:IsDefaultEntityContainer="true">
+				<EntitySet Name="SalesOrdersSet" EntityType="d43d48abf986b1b00cde2c91.SalesOrders" sap:creatable="true" sap:updatable="true"
+					sap:deletable="true"/>
+				<AssociationSet Name="SalesOrdersLineItemsSetLineItems" Association="d43d48abf986b1b00cde2c91.SalesOrdersLineItemsSetLineItems"
+					sap:creatable="true" sap:updatable="true" sap:deletable="true">
+					<End EntitySet="SalesOrdersSet" Role="FromRole_SalesOrdersLineItemsSetLineItems"/>
+					<End EntitySet="LineItemsSet" Role="ToRole_SalesOrdersLineItemsSetLineItems"/>
+				</AssociationSet>
+				<AssociationSet Name="SalesOrdersItemsAvailabilitySetItemsAvailability"
+					Association="d43d48abf986b1b00cde2c91.SalesOrdersItemsAvailabilitySetItemsAvailability" sap:creatable="true" sap:updatable="true"
+					sap:deletable="true">
+					<End EntitySet="SalesOrdersSet" Role="FromRole_SalesOrdersItemsAvailabilitySetItemsAvailability"/>
+					<End EntitySet="ItemsAvailabilitySet" Role="ToRole_SalesOrdersItemsAvailabilitySetItemsAvailability"/>
+				</AssociationSet>
+				<AssociationSet Name="SalesOrdersOrderDetailsSetOrderDetails" Association="d43d48abf986b1b00cde2c91.SalesOrdersOrderDetailsSetOrderDetails"
+					sap:creatable="true" sap:updatable="true" sap:deletable="true">
+					<End EntitySet="SalesOrdersSet" Role="FromRole_SalesOrdersOrderDetailsSetOrderDetails"/>
+					<End EntitySet="OrderDetailsSet" Role="ToRole_SalesOrdersOrderDetailsSetOrderDetails"/>
+				</AssociationSet>
+				<EntitySet Name="LineItemsSet" EntityType="d43d48abf986b1b00cde2c91.LineItems" sap:creatable="true" sap:updatable="true"
+					sap:deletable="true"/>
+				<EntitySet Name="ItemsAvailabilitySet" EntityType="d43d48abf986b1b00cde2c91.ItemsAvailability" sap:creatable="true" sap:updatable="true"
+					sap:deletable="true"/>
+				<EntitySet Name="OrderDetailsSet" EntityType="d43d48abf986b1b00cde2c91.OrderDetails" sap:creatable="true" sap:updatable="true"
+					sap:deletable="true"/>
+			</EntityContainer>
+			<EntityType Name="SalesOrders">
+				<Key>
+					<PropertyRef Name="ID"/>
+				</Key>
+				<Property Name="ID" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="ID"/>
+				<Property Name="SOID" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="SOID"/>
+				<Property Name="Amount" Type="Edm.Decimal" sap:creatable="false" sap:updatable="false" sap:deletable="false"
+					sap:calculated="{&quot;calculation&quot;:&quot;[{\&quot;label\&quot;:\&quot;PROPERTY\&quot;,\&quot;name\&quot;:\&quot;property\&quot;,\&quot;entityName\&quot;:\&quot;LineItems\&quot;,\&quot;entityId\&quot;:\&quot;LineItems\&quot;,\&quot;navPropName\&quot;:\&quot;LineItemsSet\&quot;,\&quot;navPropId\&quot;:\&quot;LineItemsSet\&quot;,\&quot;navPropMultiplicity\&quot;:true,\&quot;navPropOp\&quot;:\&quot;sum\&quot;,\&quot;propertyName\&quot;:\&quot;SubTotal\&quot;,\&quot;propertyId\&quot;:\&quot;SubTotal\&quot;,\&quot;type\&quot;:\&quot;property\&quot;,\&quot;id\&quot;:0}]&quot;,&quot;inputProperties&quot;:[{&quot;navPropId&quot;:&quot;LineItemsSet&quot;,&quot;entityId&quot;:&quot;LineItems&quot;,&quot;propertyId&quot;:&quot;SubTotal&quot;,&quot;_id&quot;:{&quot;_bsontype&quot;:&quot;ObjectID&quot;,&quot;id&quot;:&quot;W\u0018ëü&lt;Èo#çI&quot;}}]}"
+					sap:label="Amount"/>
+				<Property Name="Currency" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="Currency"/>
+				<Property Name="ShipTo" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="ShipTo"/>
+				<Property Name="Address" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="Address"/>
+				<Property Name="OrderedDate" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="OrderedDate"/>
+				<Property Name="RequestedDate" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="RequestedDate"/>
+				<Property Name="SOForm" Type="Edm.String" sap:creatable="false" sap:updatable="false" sap:deletable="false"
+					sap:calculated="{&quot;calculation&quot;:&quot;[{\&quot;label\&quot;:\&quot;+\&quot;,\&quot;name\&quot;:\&quot;plus\&quot;,\&quot;type\&quot;:\&quot;operator\&quot;,\&quot;left\&quot;:[{\&quot;label\&quot;:\&quot;VALUE\&quot;,\&quot;name\&quot;:\&quot;value\&quot;,\&quot;type\&quot;:\&quot;value\&quot;,\&quot;value\&quot;:\&quot;SO \&quot;,\&quot;id\&quot;:1}],\&quot;right\&quot;:[{\&quot;label\&quot;:\&quot;PROPERTY\&quot;,\&quot;name\&quot;:\&quot;property\&quot;,\&quot;entityName\&quot;:\&quot;SalesOrders\&quot;,\&quot;entityId\&quot;:\&quot;SalesOrders\&quot;,\&quot;navPropName\&quot;:\&quot;\&quot;,\&quot;navPropId\&quot;:\&quot;\&quot;,\&quot;navPropMultiplicity\&quot;:null,\&quot;navPropOp\&quot;:null,\&quot;propertyName\&quot;:\&quot;SOID\&quot;,\&quot;propertyId\&quot;:\&quot;SOID\&quot;,\&quot;type\&quot;:\&quot;property\&quot;,\&quot;id\&quot;:2}],\&quot;id\&quot;:0}]&quot;,&quot;inputProperties&quot;:[{&quot;navPropId&quot;:&quot;&quot;,&quot;entityId&quot;:&quot;SalesOrders&quot;,&quot;propertyId&quot;:&quot;SOID&quot;,&quot;_id&quot;:{&quot;_bsontype&quot;:&quot;ObjectID&quot;,&quot;id&quot;:&quot;V\u001d{Ù¦îá)F0o&quot;}}]}"
+					sap:label="SOForm"/>
+				<Property Name="___FK_17b8a1f68f317fd90ae053f3" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true"
+					sap:label="___FK_17b8a1f68f317fd90ae053f3"/>
+				<Property Name="Total" Type="Edm.Decimal" sap:creatable="false" sap:updatable="false" sap:deletable="false"
+					sap:calculated="{&quot;calculation&quot;:&quot;[{\&quot;label\&quot;:\&quot;PROPERTY\&quot;,\&quot;name\&quot;:\&quot;property\&quot;,\&quot;entityName\&quot;:\&quot;ItemsAvailability\&quot;,\&quot;entityId\&quot;:\&quot;ItemsAvailability\&quot;,\&quot;navPropName\&quot;:\&quot;ItemsAvailabilitySet\&quot;,\&quot;navPropId\&quot;:\&quot;ItemsAvailabilitySet\&quot;,\&quot;navPropMultiplicity\&quot;:true,\&quot;navPropOp\&quot;:\&quot;sum\&quot;,\&quot;propertyName\&quot;:\&quot;SubTotal\&quot;,\&quot;propertyId\&quot;:\&quot;SubTotal\&quot;,\&quot;type\&quot;:\&quot;property\&quot;,\&quot;id\&quot;:0}]&quot;,&quot;inputProperties&quot;:[{&quot;navPropId&quot;:&quot;ItemsAvailabilitySet&quot;,&quot;entityId&quot;:&quot;ItemsAvailability&quot;,&quot;propertyId&quot;:&quot;SubTotal&quot;,&quot;_id&quot;:{&quot;_bsontype&quot;:&quot;ObjectID&quot;,&quot;id&quot;:&quot;W\u0018\u0016ü&lt;Èo#ç}&quot;}}]}"
+					sap:label="Total"/>
+				<Property Name="Tax" Type="Edm.Decimal" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="Tax"/>
+				<Property Name="GrandTotal" Type="Edm.Decimal" sap:creatable="false" sap:updatable="false" sap:deletable="false"
+					sap:calculated="{&quot;calculation&quot;:&quot;[{\&quot;label\&quot;:\&quot;+\&quot;,\&quot;name\&quot;:\&quot;plus\&quot;,\&quot;type\&quot;:\&quot;operator\&quot;,\&quot;left\&quot;:[{\&quot;label\&quot;:\&quot;*\&quot;,\&quot;name\&quot;:\&quot;times\&quot;,\&quot;type\&quot;:\&quot;operator\&quot;,\&quot;left\&quot;:[{\&quot;label\&quot;:\&quot;PROPERTY\&quot;,\&quot;name\&quot;:\&quot;property\&quot;,\&quot;entityName\&quot;:\&quot;SalesOrders\&quot;,\&quot;entityId\&quot;:\&quot;SalesOrders\&quot;,\&quot;navPropName\&quot;:\&quot;\&quot;,\&quot;navPropId\&quot;:\&quot;\&quot;,\&quot;navPropMultiplicity\&quot;:null,\&quot;navPropOp\&quot;:null,\&quot;propertyName\&quot;:\&quot;Total\&quot;,\&quot;propertyId\&quot;:\&quot;Total\&quot;,\&quot;type\&quot;:\&quot;property\&quot;,\&quot;id\&quot;:2}],\&quot;right\&quot;:[{\&quot;label\&quot;:\&quot;PROPERTY\&quot;,\&quot;name\&quot;:\&quot;property\&quot;,\&quot;entityName\&quot;:\&quot;SalesOrders\&quot;,\&quot;entityId\&quot;:\&quot;SalesOrders\&quot;,\&quot;navPropName\&quot;:\&quot;\&quot;,\&quot;navPropId\&quot;:\&quot;\&quot;,\&quot;navPropMultiplicity\&quot;:null,\&quot;navPropOp\&quot;:null,\&quot;propertyName\&quot;:\&quot;Tax\&quot;,\&quot;propertyId\&quot;:\&quot;Tax\&quot;,\&quot;type\&quot;:\&quot;property\&quot;,\&quot;id\&quot;:3}],\&quot;id\&quot;:1}],\&quot;right\&quot;:[{\&quot;label\&quot;:\&quot;PROPERTY\&quot;,\&quot;name\&quot;:\&quot;property\&quot;,\&quot;entityName\&quot;:\&quot;SalesOrders\&quot;,\&quot;entityId\&quot;:\&quot;SalesOrders\&quot;,\&quot;navPropName\&quot;:\&quot;\&quot;,\&quot;navPropId\&quot;:\&quot;\&quot;,\&quot;navPropMultiplicity\&quot;:null,\&quot;navPropOp\&quot;:null,\&quot;propertyName\&quot;:\&quot;Total\&quot;,\&quot;propertyId\&quot;:\&quot;Total\&quot;,\&quot;type\&quot;:\&quot;property\&quot;,\&quot;id\&quot;:4}],\&quot;id\&quot;:0}]&quot;,&quot;inputProperties&quot;:[{&quot;navPropId&quot;:&quot;&quot;,&quot;entityId&quot;:&quot;SalesOrders&quot;,&quot;propertyId&quot;:&quot;Total&quot;,&quot;_id&quot;:{&quot;_bsontype&quot;:&quot;ObjectID&quot;,&quot;id&quot;:&quot;W\u0018§ü&lt;Èo#è5&quot;}},{&quot;navPropId&quot;:&quot;&quot;,&quot;entityId&quot;:&quot;SalesOrders&quot;,&quot;propertyId&quot;:&quot;Tax&quot;,&quot;_id&quot;:{&quot;_bsontype&quot;:&quot;ObjectID&quot;,&quot;id&quot;:&quot;W\u0018§ü&lt;Èo#è4&quot;}},{&quot;navPropId&quot;:&quot;&quot;,&quot;entityId&quot;:&quot;SalesOrders&quot;,&quot;propertyId&quot;:&quot;Total&quot;,&quot;_id&quot;:{&quot;_bsontype&quot;:&quot;ObjectID&quot;,&quot;id&quot;:&quot;W\u0018§ü&lt;Èo#è3&quot;}}]}"
+					sap:label="GrandTotal"/>
+				<Property Name="NbItems" Type="Edm.String" sap:creatable="false" sap:updatable="false" sap:deletable="false"
+					sap:calculated="{&quot;calculation&quot;:&quot;[{\&quot;label\&quot;:\&quot;+\&quot;,\&quot;name\&quot;:\&quot;plus\&quot;,\&quot;type\&quot;:\&quot;operator\&quot;,\&quot;left\&quot;:[{\&quot;label\&quot;:\&quot;+\&quot;,\&quot;name\&quot;:\&quot;plus\&quot;,\&quot;type\&quot;:\&quot;operator\&quot;,\&quot;left\&quot;:[{\&quot;label\&quot;:\&quot;VALUE\&quot;,\&quot;name\&quot;:\&quot;value\&quot;,\&quot;type\&quot;:\&quot;value\&quot;,\&quot;value\&quot;:\&quot;Items (\&quot;,\&quot;id\&quot;:2}],\&quot;right\&quot;:[{\&quot;label\&quot;:\&quot;PROPERTY\&quot;,\&quot;name\&quot;:\&quot;property\&quot;,\&quot;entityName\&quot;:\&quot;LineItems\&quot;,\&quot;entityId\&quot;:\&quot;LineItems\&quot;,\&quot;navPropName\&quot;:\&quot;LineItemsSet\&quot;,\&quot;navPropId\&quot;:\&quot;LineItemsSet\&quot;,\&quot;navPropMultiplicity\&quot;:true,\&quot;navPropOp\&quot;:\&quot;count\&quot;,\&quot;propertyName\&quot;:\&quot;ID\&quot;,\&quot;propertyId\&quot;:\&quot;ID\&quot;,\&quot;type\&quot;:\&quot;property\&quot;,\&quot;id\&quot;:3}],\&quot;id\&quot;:1}],\&quot;right\&quot;:[{\&quot;label\&quot;:\&quot;VALUE\&quot;,\&quot;name\&quot;:\&quot;value\&quot;,\&quot;type\&quot;:\&quot;value\&quot;,\&quot;value\&quot;:\&quot;)\&quot;,\&quot;id\&quot;:4}],\&quot;id\&quot;:0}]&quot;,&quot;inputProperties&quot;:[{&quot;navPropId&quot;:&quot;LineItemsSet&quot;,&quot;entityId&quot;:&quot;LineItems&quot;,&quot;propertyId&quot;:&quot;ID&quot;,&quot;_id&quot;:{&quot;_bsontype&quot;:&quot;ObjectID&quot;,&quot;id&quot;:&quot;WD\u0010Ê\u0013N\u0000\u000eÖ\u0005ù&quot;}}]}"
+					sap:label="NbItems"/>
+				<NavigationProperty Name="LineItemsSet" Relationship="d43d48abf986b1b00cde2c91.SalesOrdersLineItemsSetLineItems"
+					FromRole="FromRole_SalesOrdersLineItemsSetLineItems" ToRole="ToRole_SalesOrdersLineItemsSetLineItems"/>
+				<NavigationProperty Name="ItemsAvailabilitySet" Relationship="d43d48abf986b1b00cde2c91.SalesOrdersItemsAvailabilitySetItemsAvailability"
+					FromRole="FromRole_SalesOrdersItemsAvailabilitySetItemsAvailability" ToRole="ToRole_SalesOrdersItemsAvailabilitySetItemsAvailability"/>
+				<NavigationProperty Name="OrderDetailsSet" Relationship="d43d48abf986b1b00cde2c91.SalesOrdersOrderDetailsSetOrderDetails"
+					FromRole="FromRole_SalesOrdersOrderDetailsSetOrderDetails" ToRole="ToRole_SalesOrdersOrderDetailsSetOrderDetails"/>
+			</EntityType>
+			<Association Name="SalesOrdersLineItemsSetLineItems">
+				<End Type="d43d48abf986b1b00cde2c91.SalesOrders" Multiplicity="1" Role="FromRole_SalesOrdersLineItemsSetLineItems"/>
+				<End Type="d43d48abf986b1b00cde2c91.LineItems" Multiplicity="*" Role="ToRole_SalesOrdersLineItemsSetLineItems"/>
+				<ReferentialConstraint>
+					<Principal Role="FromRole_SalesOrdersLineItemsSetLineItems">
+						<PropertyRef Name="ID"/>
+					</Principal>
+					<Dependent Role="ToRole_SalesOrdersLineItemsSetLineItems">
+						<PropertyRef Name="___FK_cfafc4bf8dfb1ea60ae04ba2"/>
+					</Dependent>
+				</ReferentialConstraint>
+			</Association>
+			<Association Name="SalesOrdersItemsAvailabilitySetItemsAvailability">
+				<End Type="d43d48abf986b1b00cde2c91.SalesOrders" Multiplicity="1" Role="FromRole_SalesOrdersItemsAvailabilitySetItemsAvailability"/>
+				<End Type="d43d48abf986b1b00cde2c91.ItemsAvailability" Multiplicity="*" Role="ToRole_SalesOrdersItemsAvailabilitySetItemsAvailability"/>
+				<ReferentialConstraint>
+					<Principal Role="FromRole_SalesOrdersItemsAvailabilitySetItemsAvailability">
+						<PropertyRef Name="ID"/>
+					</Principal>
+					<Dependent Role="ToRole_SalesOrdersItemsAvailabilitySetItemsAvailability">
+						<PropertyRef Name="___FK_cb2e67451ade727e0ae052e9"/>
+					</Dependent>
+				</ReferentialConstraint>
+			</Association>
+			<Association Name="SalesOrdersOrderDetailsSetOrderDetails">
+				<End Type="d43d48abf986b1b00cde2c91.SalesOrders" Multiplicity="1" Role="FromRole_SalesOrdersOrderDetailsSetOrderDetails"/>
+				<End Type="d43d48abf986b1b00cde2c91.OrderDetails" Multiplicity="1" Role="ToRole_SalesOrdersOrderDetailsSetOrderDetails"/>
+				<ReferentialConstraint>
+					<Principal Role="FromRole_SalesOrdersOrderDetailsSetOrderDetails">
+						<PropertyRef Name="___FK_17b8a1f68f317fd90ae053f3"/>
+					</Principal>
+					<Dependent Role="ToRole_SalesOrdersOrderDetailsSetOrderDetails">
+						<PropertyRef Name="ID"/>
+					</Dependent>
+				</ReferentialConstraint>
+			</Association>
+			<EntityType Name="LineItems">
+				<Key>
+					<PropertyRef Name="ID"/>
+				</Key>
+				<Property Name="ID" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="ID"/>
+				<Property Name="___FK_cfafc4bf8dfb1ea60ae04ba2" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true"
+					sap:label="___FK_cfafc4bf8dfb1ea60ae04ba2"/>
+				<Property Name="Name" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="Name"/>
+				<Property Name="Quantity" Type="Edm.Decimal" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="Quantity"/>
+				<Property Name="QuantityMeasure" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true"
+					sap:label="QuantityMeasure"/>
+				<Property Name="ItemPrice" Type="Edm.Decimal" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="ItemPrice"/>
+				<Property Name="Currency" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="Currency"/>
+				<Property Name="SubTotal" Type="Edm.Decimal" sap:creatable="false" sap:updatable="false" sap:deletable="false"
+					sap:calculated="{&quot;calculation&quot;:&quot;[{\&quot;label\&quot;:\&quot;*\&quot;,\&quot;name\&quot;:\&quot;times\&quot;,\&quot;type\&quot;:\&quot;operator\&quot;,\&quot;left\&quot;:[{\&quot;label\&quot;:\&quot;PROPERTY\&quot;,\&quot;name\&quot;:\&quot;property\&quot;,\&quot;entityName\&quot;:\&quot;LineItems\&quot;,\&quot;entityId\&quot;:\&quot;LineItems\&quot;,\&quot;navPropName\&quot;:\&quot;\&quot;,\&quot;navPropId\&quot;:\&quot;\&quot;,\&quot;navPropMultiplicity\&quot;:null,\&quot;navPropOp\&quot;:null,\&quot;propertyName\&quot;:\&quot;Quantity\&quot;,\&quot;propertyId\&quot;:\&quot;Quantity\&quot;,\&quot;type\&quot;:\&quot;property\&quot;,\&quot;id\&quot;:1}],\&quot;right\&quot;:[{\&quot;label\&quot;:\&quot;PROPERTY\&quot;,\&quot;name\&quot;:\&quot;property\&quot;,\&quot;entityName\&quot;:\&quot;LineItems\&quot;,\&quot;entityId\&quot;:\&quot;LineItems\&quot;,\&quot;navPropName\&quot;:\&quot;\&quot;,\&quot;navPropId\&quot;:\&quot;\&quot;,\&quot;navPropMultiplicity\&quot;:null,\&quot;navPropOp\&quot;:null,\&quot;propertyName\&quot;:\&quot;ItemPrice\&quot;,\&quot;propertyId\&quot;:\&quot;ItemPrice\&quot;,\&quot;type\&quot;:\&quot;property\&quot;,\&quot;id\&quot;:2}],\&quot;id\&quot;:0}]&quot;,&quot;inputProperties&quot;:[{&quot;navPropId&quot;:&quot;&quot;,&quot;entityId&quot;:&quot;LineItems&quot;,&quot;propertyId&quot;:&quot;Quantity&quot;,&quot;_id&quot;:{&quot;_bsontype&quot;:&quot;ObjectID&quot;,&quot;id&quot;:&quot;W\u0018îDP4m#\u0011ÅW&quot;}},{&quot;navPropId&quot;:&quot;&quot;,&quot;entityId&quot;:&quot;LineItems&quot;,&quot;propertyId&quot;:&quot;ItemPrice&quot;,&quot;_id&quot;:{&quot;_bsontype&quot;:&quot;ObjectID&quot;,&quot;id&quot;:&quot;W\u0018îDP4m#\u0011ÅV&quot;}}]}"
+					sap:label="SubTotal"/>
+			</EntityType>
+			<EntityType Name="ItemsAvailability">
+				<Key>
+					<PropertyRef Name="ID"/>
+				</Key>
+				<Property Name="ID" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="ID"/>
+				<Property Name="___FK_cb2e67451ade727e0ae052e9" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true"
+					sap:label="___FK_cb2e67451ade727e0ae052e9"/>
+				<Property Name="Name" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="Name"/>
+				<Property Name="ReqQuantity" Type="Edm.Decimal" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="ReqQuantity"/>
+				<Property Name="ReqDelivery" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="ReqDelivery"/>
+				<Property Name="AvailableQuantity" Type="Edm.Decimal" sap:creatable="true" sap:updatable="true" sap:deletable="true"
+					sap:label="AvailableQuantity"/>
+				<Property Name="EstDelivery" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="EstDelivery"/>
+				<Property Name="Price" Type="Edm.Decimal" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="Price"/>
+				<Property Name="SubTotal" Type="Edm.Decimal" sap:creatable="false" sap:updatable="false" sap:deletable="false"
+					sap:calculated="{&quot;calculation&quot;:&quot;[{\&quot;label\&quot;:\&quot;*\&quot;,\&quot;name\&quot;:\&quot;times\&quot;,\&quot;type\&quot;:\&quot;operator\&quot;,\&quot;left\&quot;:[{\&quot;label\&quot;:\&quot;PROPERTY\&quot;,\&quot;name\&quot;:\&quot;property\&quot;,\&quot;entityName\&quot;:\&quot;ItemsAvailability\&quot;,\&quot;entityId\&quot;:\&quot;ItemsAvailability\&quot;,\&quot;navPropName\&quot;:\&quot;\&quot;,\&quot;navPropId\&quot;:\&quot;\&quot;,\&quot;navPropMultiplicity\&quot;:null,\&quot;navPropOp\&quot;:null,\&quot;propertyName\&quot;:\&quot;Price\&quot;,\&quot;propertyId\&quot;:\&quot;Price\&quot;,\&quot;type\&quot;:\&quot;property\&quot;,\&quot;id\&quot;:1}],\&quot;right\&quot;:[{\&quot;label\&quot;:\&quot;PROPERTY\&quot;,\&quot;name\&quot;:\&quot;property\&quot;,\&quot;entityName\&quot;:\&quot;ItemsAvailability\&quot;,\&quot;entityId\&quot;:\&quot;ItemsAvailability\&quot;,\&quot;navPropName\&quot;:\&quot;\&quot;,\&quot;navPropId\&quot;:\&quot;\&quot;,\&quot;navPropMultiplicity\&quot;:null,\&quot;navPropOp\&quot;:null,\&quot;propertyName\&quot;:\&quot;ReqQuantity\&quot;,\&quot;propertyId\&quot;:\&quot;ReqQuantity\&quot;,\&quot;type\&quot;:\&quot;property\&quot;,\&quot;id\&quot;:2}],\&quot;id\&quot;:0}]&quot;,&quot;inputProperties&quot;:[{&quot;navPropId&quot;:&quot;&quot;,&quot;entityId&quot;:&quot;ItemsAvailability&quot;,&quot;propertyId&quot;:&quot;Price&quot;,&quot;_id&quot;:{&quot;_bsontype&quot;:&quot;ObjectID&quot;,&quot;id&quot;:&quot;W\u0018&lt;DP4m#\u0011Æ&quot;}},{&quot;navPropId&quot;:&quot;&quot;,&quot;entityId&quot;:&quot;ItemsAvailability&quot;,&quot;propertyId&quot;:&quot;ReqQuantity&quot;,&quot;_id&quot;:{&quot;_bsontype&quot;:&quot;ObjectID&quot;,&quot;id&quot;:&quot;W\u0018&lt;DP4m#\u0011Æ&quot;}}]}"
+					sap:label="SubTotal"/>
+			</EntityType>
+			<EntityType Name="OrderDetails">
+				<Key>
+					<PropertyRef Name="ID"/>
+				</Key>
+				<Property Name="ID" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="ID"/>
+				<Property Name="PO" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="PO"/>
+				<Property Name="ShipToParty" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="ShipToParty"/>
+				<Property Name="Address" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="Address"/>
+				<Property Name="City" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="City"/>
+				<Property Name="State" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="State"/>
+				<Property Name="Country" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="Country"/>
+				<Property Name="PhoneNumber" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="PhoneNumber"/>
+				<Property Name="Carrier" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="Carrier"/>
+				<Property Name="Incoterms" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="Incoterms"/>
+				<Property Name="ShippingInstructions" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true"
+					sap:label="ShippingInstructions"/>
+				<Property Name="NotesToReceiver" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true"
+					sap:label="NotesToReceiver"/>
+				<Property Name="Zip" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="Zip"/>
+			</EntityType>
+		</Schema>
+	</edmx:DataServices>
+</edmx:Edmx>

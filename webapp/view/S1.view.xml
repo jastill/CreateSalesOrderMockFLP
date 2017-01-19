@@ -1,0 +1,111 @@
+<mvc:View xmlns:mvc="sap.ui.core.mvc" controllerName="generated.app.controller.S1" xmlns:m="sap.m" xmlns:layout="sap.ui.layout">
+	<m:Page id="sap_Responsive_Page_0" showHeader="true" title="Sales Order" showFooter="true" showNavButton="false">
+		<m:content>
+			<layout:VerticalLayout id="np-sap_ui_layout_VerticalLayout-1442868802696-0I8" width="100%" visible="true">
+				<layout:content>
+					<m:ObjectHeader id="np-sap_ui_layout_VerticalLayout-1442868802696-0I8-content-sap_m_ObjectHeader-1464078293796" intro="" title="{SOForm}"
+						number="{Amount}" numberUnit="{Currency}" numberState="None" showMarkers="false" markFavorite="false" markFlagged="false"
+						backgroundDesign="Transparent" condensed="false">
+						<m:attributes>
+							<m:ObjectAttribute
+								id="np-sap_ui_layout_VerticalLayout-1442868802696-0I8-content-sap_m_ObjectHeader-1464078293796-attributes-sap_m_ObjectAttribute-1464078328874"
+								title="Ship To" text="{ShipTo}" active="false"/>
+							<m:ObjectAttribute
+								id="np-sap_ui_layout_VerticalLayout-1442868802696-0I8-content-sap_m_ObjectHeader-1464078293796-attributes-sap_m_ObjectAttribute-1464078329849"
+								text="{Address}" active="false"/>
+						</m:attributes>
+						<m:statuses>
+							<m:ObjectStatus
+								id="np-sap_ui_layout_VerticalLayout-1442868802696-0I8-content-sap_m_ObjectHeader-1464078293796-statuses-sap_m_ObjectStatus-1464078332305"
+								title="Ordered" text="{OrderedDate}" state="None"/>
+							<m:ObjectStatus
+								id="np-sap_ui_layout_VerticalLayout-1442868802696-0I8-content-sap_m_ObjectHeader-1464078293796-statuses-sap_m_ObjectStatus-1464078333751"
+								title="Requested" text="{RequestedDate}" state="None"/>
+						</m:statuses>
+					</m:ObjectHeader>
+				</layout:content>
+			</layout:VerticalLayout>
+			<m:Table id="sap_Responsive_Page_0-content-build_simple_Table-1472631749622" width="100%" noDataText="No data" mode="None"
+				showSeparators="All" growing="false" growingThreshold="20" growingScrollToLoad="false" items="{LineItemsSet}">
+				<m:headerToolbar>
+					<m:Toolbar id="sap_Responsive_Page_0-content-build_simple_Table-1472631749622-headerToolbar-sap_m_Toolbar3-1472631887665" width="auto"
+						design="Transparent" height="46px" visible="true" enabled="true">
+						<m:content>
+							<m:Text id="sap_Responsive_Page_0-content-build_simple_Table-1472631749622-headerToolbar-sap_m_Toolbar3-1472631887665-content-sap_m_Text-1"
+								text="{NbItems}" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit"/>
+						</m:content>
+						<m:tooltip/>
+					</m:Toolbar>
+				</m:headerToolbar>
+				<m:columns>
+					<m:Column id="sap_Responsive_Page_0-content-build_simple_Table-1472631749622-columns-build_simple_Column-1" width="auto" hAlign="Left"
+						vAlign="Top" minScreenWidth="Tablet" demandPopin="true" popinDisplay="Inline" mergeDuplicates="false">
+						<m:header>
+							<m:Text id="sap_Responsive_Page_0-content-build_simple_Table-1472631749622-columns-build_simple_Column-1-header-sap_m_Text-1" text="Item"
+								width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit"/>
+						</m:header>
+						<m:footer/>
+					</m:Column>
+					<m:Column id="sap_Responsive_Page_0-content-build_simple_Table-1472631749622-columns-build_simple_Column-2" width="auto" hAlign="Left"
+						vAlign="Top" minScreenWidth="Tablet" demandPopin="true" popinDisplay="Inline" mergeDuplicates="false">
+						<m:header>
+							<m:Text id="sap_Responsive_Page_0-content-build_simple_Table-1472631749622-columns-build_simple_Column-2-header-sap_m_Text-1"
+								text="Quantity" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit"/>
+						</m:header>
+						<m:footer/>
+					</m:Column>
+					<m:Column id="sap_Responsive_Page_0-content-build_simple_Table-1472631749622-columns-build_simple_Column-3" width="auto" hAlign="Left"
+						vAlign="Top" minScreenWidth="Tablet" demandPopin="true" popinDisplay="Inline" mergeDuplicates="false">
+						<m:header>
+							<m:Text id="sap_Responsive_Page_0-content-build_simple_Table-1472631749622-columns-build_simple_Column-3-header-sap_m_Text-1"
+								text="Your Price" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit"/>
+						</m:header>
+						<m:footer/>
+					</m:Column>
+					<m:Column id="sap_Responsive_Page_0-content-build_simple_Table-1472631749622-columns-build_simple_Column-1472631775016" width="auto"
+						hAlign="Left" vAlign="Top" minScreenWidth="Tablet" demandPopin="true" popinDisplay="Inline" mergeDuplicates="false">
+						<m:header>
+							<m:Text id="sap_Responsive_Page_0-content-build_simple_Table-1472631749622-columns-build_simple_Column-1472631775016-header-sap_m_Text-1"
+								text="Subtotal" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit"/>
+						</m:header>
+						<m:footer/>
+					</m:Column>
+				</m:columns>
+				<m:items>
+					<m:ColumnListItem id="sap_Responsive_Page_0-content-build_simple_Table-1472631749622-items-build_simple_Row-1" type="Inactive">
+						<m:cells>
+							<m:Text
+								id="sap_Responsive_Page_0-content-build_simple_Table-1472631749622-items-build_simple_Row-1-cells-build_simple_TableCell-1472632344051-content-sap_m_Text-1472632368701"
+								text="{Name}" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit"/>
+							<m:ObjectNumber
+								id="sap_Responsive_Page_0-content-build_simple_Table-1472631749622-items-build_simple_Row-1-cells-build_simple_TableCell-1472632351248-content-sap_m_ObjectNumber-1472632357706"
+								number="{Quantity}" unit="{QuantityMeasure}" state="None"/>
+							<m:ObjectNumber id="sap_Responsive_Page_0-content-build_simple_Table-1472631749622-items-build_simple_Row-1-cells-sap_m_ObjectNumber-3"
+								number="{ItemPrice}" unit="{Currency}" state="None"/>
+							<m:ObjectNumber
+								id="sap_Responsive_Page_0-content-build_simple_Table-1472631749622-items-build_simple_Row-1-cells-build_simple_TableCell-1472631775031-content-sap_m_ObjectNumber-1472631791526"
+								number="{SubTotal}" unit="{Currency}" state="None"/>
+						</m:cells>
+					</m:ColumnListItem>
+				</m:items>
+			</m:Table>
+		</m:content>
+		<m:footer>
+			<m:Bar id="sap_Responsive_Page_0-footer-sap_m_Bar-1461228459657" design="Auto">
+				<m:contentLeft/>
+				<m:contentMiddle/>
+				<m:contentRight>
+					<m:Button id="sap_Responsive_Page_0-footer-sap_m_Bar-1461228459657-contentRight-sap_m_Button-1" iconDensityAware="false" text="Add To Cart"
+						type="Emphasized" iconFirst="true" width="auto" enabled="true" visible="true" press="_onButtonPress3"/>
+					<m:Button id="sap_Responsive_Page_0-footer-sap_m_Bar-1461228459657-contentRight-sap_m_Button-2" iconDensityAware="false" text="Checkout"
+						type="Default" iconFirst="true" width="auto" enabled="true" visible="true" press="_onButtonPress4"/>
+				</m:contentRight>
+			</m:Bar>
+		</m:footer>
+		<m:headerContent>
+			<m:Button id="np-sap_m_Button-1442868686915-0G7" iconDensityAware="false" text="0" type="Default" icon="sap-icon://cart" iconFirst="true"
+				width="auto" enabled="true" visible="true"/>
+		</m:headerContent>
+		<m:subHeader/>
+	</m:Page>
+</mvc:View>

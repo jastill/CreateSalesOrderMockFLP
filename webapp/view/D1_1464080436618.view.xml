@@ -1,0 +1,40 @@
+<mvc:View xmlns:mvc="sap.ui.core.mvc" controllerName="generated.app.controller.D1_1464080436618" xmlns:m="sap.m">
+	<m:Dialog id="sap_m_Dialog_0" title="Change Customer" horizontalScrolling="true" showHeader="true" state="None" stretch="false"
+		type="Standard" verticalScrolling="true">
+		<m:content>
+			<m:List id="sap_m_Dialog_0-content-sap_m_List-1464080578581" mode="SingleSelectMaster" width="100%" headerText="Header" footerText=""
+				backgroundDesign="Solid" showSeparators="All" growing="false" growingThreshold="20" growingScrollToLoad="false">
+				<m:items>
+					<m:StandardListItem id="sap_m_Dialog_0-content-sap_m_List-1464080578581-items-sap_m_StandardListItem-1464080602627"
+						title="A.I.T. GmbH (1400)" description="Germany Frankfurt., Final customer sales, Cross-division" info="" infoState="None" type="Active"
+						selected="false"/>
+					<m:StandardListItem id="sap_m_Dialog_0-content-sap_m_List-1464080578581-items-sap_m_StandardListItem-1464080747041"
+						title="Becker Berlin (1000)" description="Germany Frankfurt, Final customer sales, Cross-division" info="" infoState="None" type="Active"
+						selected="false"/>
+					<m:StandardListItem id="sap_m_Dialog_0-content-sap_m_List-1464080578581-items-sap_m_StandardListItem-1464080749840"
+						title="K.F.W. Berlin (1234)" description="Germany Frankfurt, Final customer sales, Cross-division" info="" infoState="None" type="Active"
+						selected="false"/>
+				</m:items>
+				<m:headerToolbar>
+					<m:Toolbar id="sap_m_Dialog_0-content-sap_m_List-1464080578581-headerToolbar-sap_m_Toolbar2-1" visible="true" enabled="true" width=""
+						design="Solid">
+						<m:content>
+							<m:SearchField id="sap_m_Dialog_0-content-sap_m_List-1464080578581-headerToolbar-sap_m_Toolbar2-1-content-sap_m_SearchField-1"
+								placeholder="Search" showSearchButton="true" visible="true" width="100%"/>
+						</m:content>
+					</m:Toolbar>
+				</m:headerToolbar>
+			</m:List>
+		</m:content>
+		<m:beginButton/>
+		<m:buttons>
+			<m:Button id="sap_m_Dialog_0-buttons-sap_m_Button-1464080870557" iconDensityAware="false" text="OK" type="Default" iconFirst="true"
+				width="auto" enabled="true" visible="true" press="_onButtonPress9"/>
+			<m:Button id="sap_m_Dialog_0-buttons-sap_m_Button-1464080871549" iconDensityAware="false" text="Cancel" type="Default" iconFirst="true"
+				width="auto" enabled="true" visible="true" press="_onButtonPress10"/>
+		</m:buttons>
+		<m:customHeader/>
+		<m:endButton/>
+		<m:subHeader/>
+	</m:Dialog>
+</mvc:View>

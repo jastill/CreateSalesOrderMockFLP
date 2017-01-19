@@ -1,0 +1,145 @@
+<mvc:View xmlns:mvc="sap.ui.core.mvc" controllerName="generated.app.controller.1444773305662_S2" xmlns:m="sap.m"
+	xmlns:form="sap.ui.layout.form" xmlns:core="sap.ui.core">
+	<m:Page id="sap_Responsive_Page_0" showHeader="true" title="Price And Availability Check" showFooter="true" showNavButton="true"
+		navButtonPress="_onPageNavButtonPress">
+		<m:content>
+			<form:SimpleForm id="np-sap_ui_layout_form_SimpleForm-1444773356408-032" minWidth="-1" maxContainerCols="2" layout="ResponsiveLayout"
+				editable="true" visible="true">
+				<form:title>
+					<core:Title id="np-sap_ui_core_Title-1444773356410-033" text="Delivery Schedules" level="Auto"/>
+				</form:title>
+				<form:content>
+					<m:Label id="np-sap_m_Label-1444773356410-034" text="Customer" design="Standard" width="auto" required="false" textAlign="Begin"
+						textDirection="Inherit"/>
+					<m:Text id="np-sap_m_Text-1444773356410-035" text="{ShipTo}" width="300px" maxLines="1" wrapping="true" textAlign="Begin"
+						textDirection="Inherit"/>
+					<m:Label id="np-sap_m_Label-1444773356410-036" text="Requested Delivery" design="Standard" width="auto" required="false" textAlign="Begin"
+						textDirection="Inherit"/>
+					<m:DateTimeInput id="np-sap_m_DateTimeInput-1444773483158-03K" placeholder="Enter a date or date and time..." value="{OrderedDate}"
+						type="Date" enabled="true" visible="true" width="150px"/>
+					<m:Label id="np-sap_m_Label-1444773356410-038" text="Single Shipment" design="Standard" width="auto" required="false" textAlign="Begin"
+						textDirection="Inherit"/>
+					<m:ComboBox id="np-sap_m_ComboBox-1444773523848-03N" editable="true" enabled="true" visible="true" width="150px" valueState="None"
+						maxWidth="100%">
+						<m:items>
+							<core:Item id="np-sap_ui_core_Item-1444773523850-03O" text="Yes" enabled="true"/>
+							<core:Item id="np-sap_ui_core_Item-1444773551477-041" text="No" enabled="true"/>
+						</m:items>
+					</m:ComboBox>
+				</form:content>
+			</form:SimpleForm>
+			<m:Table id="sap_Responsive_Page_0-content-build_simple_Table-1472634035551" width="100%" noDataText="No data" mode="None"
+				showSeparators="All" growing="false" growingThreshold="20" growingScrollToLoad="false" items="{ItemsAvailabilitySet}">
+				<m:headerToolbar>
+					<m:Toolbar id="sap_Responsive_Page_0-content-build_simple_Table-1472634035551-headerToolbar-sap_m_Toolbar3-1472634991018" width="auto"
+						design="Transparent" height="46px" visible="true" enabled="true">
+						<m:content>
+							<m:Text id="sap_Responsive_Page_0-content-build_simple_Table-1472634035551-headerToolbar-sap_m_Toolbar3-1472634991018-content-sap_m_Text-1"
+								text="{NbItems}" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit"/>
+						</m:content>
+						<m:tooltip/>
+					</m:Toolbar>
+				</m:headerToolbar>
+				<m:columns>
+					<m:Column id="sap_Responsive_Page_0-content-build_simple_Table-1472634035551-columns-build_simple_Column-1" width="auto" hAlign="Left"
+						vAlign="Middle" minScreenWidth="Tablet" demandPopin="true" popinDisplay="Inline" mergeDuplicates="false">
+						<m:header>
+							<m:Text id="sap_Responsive_Page_0-content-build_simple_Table-1472634035551-columns-build_simple_Column-1-header-sap_m_Text-1" text="Item"
+								width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit"/>
+						</m:header>
+						<m:footer/>
+					</m:Column>
+					<m:Column id="sap_Responsive_Page_0-content-build_simple_Table-1472634035551-columns-build_simple_Column-1472634055550" width="auto"
+						hAlign="Left" vAlign="Top" minScreenWidth="Tablet" demandPopin="true" popinDisplay="Inline" mergeDuplicates="false">
+						<m:header>
+							<m:Text id="sap_Responsive_Page_0-content-build_simple_Table-1472634035551-columns-build_simple_Column-1472634055550-header-sap_m_Text-1"
+								text="Requested Quantity" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit"/>
+						</m:header>
+						<m:footer/>
+					</m:Column>
+					<m:Column id="sap_Responsive_Page_0-content-build_simple_Table-1472634035551-columns-build_simple_Column-1472634050193" width="auto"
+						hAlign="Left" vAlign="Top" minScreenWidth="Tablet" demandPopin="true" popinDisplay="Inline" mergeDuplicates="false">
+						<m:header>
+							<m:Text id="sap_Responsive_Page_0-content-build_simple_Table-1472634035551-columns-build_simple_Column-1472634050193-header-sap_m_Text-1"
+								text="Requested Delivery" width="140px" maxLines="2" wrapping="false" textAlign="Begin" textDirection="Inherit"/>
+						</m:header>
+						<m:footer/>
+					</m:Column>
+					<m:Column id="sap_Responsive_Page_0-content-build_simple_Table-1472634035551-columns-build_simple_Column-2" width="auto" hAlign="Center"
+						vAlign="Middle" minScreenWidth="Tablet" demandPopin="true" popinDisplay="Inline" mergeDuplicates="false">
+						<m:header>
+							<m:Text id="sap_Responsive_Page_0-content-build_simple_Table-1472634035551-columns-build_simple_Column-2-header-sap_m_Text-1"
+								text="Available Quantity" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit"/>
+						</m:header>
+						<m:footer/>
+					</m:Column>
+					<m:Column id="sap_Responsive_Page_0-content-build_simple_Table-1472634035551-columns-build_simple_Column-1472634062441" width="auto"
+						hAlign="Left" vAlign="Middle" minScreenWidth="Tablet" demandPopin="true" popinDisplay="Inline" mergeDuplicates="false">
+						<m:header>
+							<m:Text id="sap_Responsive_Page_0-content-build_simple_Table-1472634035551-columns-build_simple_Column-1472634062441-header-sap_m_Text-1"
+								text="Estimated Delivery" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit"/>
+						</m:header>
+						<m:footer/>
+					</m:Column>
+					<m:Column id="sap_Responsive_Page_0-content-build_simple_Table-1472634035551-columns-build_simple_Column-1472634110515" width="auto"
+						hAlign="Right" vAlign="Middle" minScreenWidth="Tablet" demandPopin="true" popinDisplay="Inline" mergeDuplicates="false">
+						<m:header>
+							<m:Text id="sap_Responsive_Page_0-content-build_simple_Table-1472634035551-columns-build_simple_Column-1472634110515-header-sap_m_Text-1"
+								text="Your Price (EUR)" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit"/>
+						</m:header>
+						<m:footer/>
+					</m:Column>
+					<m:Column id="sap_Responsive_Page_0-content-build_simple_Table-1472634035551-columns-build_simple_Column-1472634104800" width="auto"
+						hAlign="Right" vAlign="Middle" minScreenWidth="Tablet" demandPopin="true" popinDisplay="Inline" mergeDuplicates="false">
+						<m:header>
+							<m:Text id="sap_Responsive_Page_0-content-build_simple_Table-1472634035551-columns-build_simple_Column-1472634104800-header-sap_m_Text-1"
+								text="Subtotal (EUR)" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit"/>
+						</m:header>
+						<m:footer/>
+					</m:Column>
+				</m:columns>
+				<m:items>
+					<m:ColumnListItem id="sap_Responsive_Page_0-content-build_simple_Table-1472634035551-items-build_simple_Row-1" type="Inactive">
+						<m:cells>
+							<m:ObjectIdentifier
+								id="sap_Responsive_Page_0-content-build_simple_Table-1472634035551-items-build_simple_Row-1-cells-sap_m_ObjectIdentifier-1" title="{Name}"
+								text="" titleActive="false" visible="true"/>
+							<m:Input
+								id="sap_Responsive_Page_0-content-build_simple_Table-1472634035551-items-build_simple_Row-1-cells-build_simple_TableCell-1472634055569-content-sap_m_Input-1472634190293"
+								value="{ReqQuantity}" type="Text" showValueHelp="false" enabled="true" visible="true" width="auto" valueHelpOnly="false" maxLength="0"/>
+							<m:DatePicker
+								id="sap_Responsive_Page_0-content-build_simple_Table-1472634035551-items-build_simple_Row-1-cells-build_simple_TableCell-1472634050205-content-sap_m_DatePicker-1472634213561"
+								displayFormat="MMM dd, yyyy" placeholder="Enter Date" value="{ReqDelivery}" enabled="true" visible="true" width="140px"/>
+							<m:Text id="sap_Responsive_Page_0-content-build_simple_Table-1472634035551-items-build_simple_Row-1-cells-sap_m_Text-2"
+								text="{AvailableQuantity}" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit"/>
+							<m:Text
+								id="sap_Responsive_Page_0-content-build_simple_Table-1472634035551-items-build_simple_Row-1-cells-build_simple_TableCell-1472634062450-content-sap_m_Text-1472634229681"
+								text="{EstDelivery}" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit"/>
+							<m:Text
+								id="sap_Responsive_Page_0-content-build_simple_Table-1472634035551-items-build_simple_Row-1-cells-build_simple_TableCell-1472634110529-content-sap_m_Text-1472634239979"
+								text="{Price}" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit"/>
+							<m:Text
+								id="sap_Responsive_Page_0-content-build_simple_Table-1472634035551-items-build_simple_Row-1-cells-build_simple_TableCell-1472634104811-content-sap_m_Text-1472634247044"
+								text="{SubTotal}" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit"/>
+						</m:cells>
+					</m:ColumnListItem>
+				</m:items>
+			</m:Table>
+		</m:content>
+		<m:footer>
+			<m:Bar id="sap_Responsive_Page_0-footer-sap_m_Bar-1461228840421" design="Auto">
+				<m:contentLeft/>
+				<m:contentMiddle/>
+				<m:contentRight>
+					<m:Button id="sap_Responsive_Page_0-footer-sap_m_Bar-1461228840421-contentRight-sap_m_Button-1" iconDensityAware="false" text="Update"
+						type="Default" iconFirst="true" width="auto" enabled="true" visible="true" press="_onButtonPress"/>
+					<m:Button id="sap_Responsive_Page_0-footer-sap_m_Bar-1461228840421-contentRight-sap_m_Button-2" iconDensityAware="false"
+						text="Review Shipping" type="Default" iconFirst="true" width="auto" enabled="true" visible="true" press="_onButtonPress1"/>
+				</m:contentRight>
+			</m:Bar>
+		</m:footer>
+		<m:headerContent/>
+		<m:subHeader/>
+		<m:customHeader/>
+	</m:Page>
+</mvc:View>
